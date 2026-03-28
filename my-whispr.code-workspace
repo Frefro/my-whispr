@@ -1,0 +1,161 @@
+{
+  "folders": [
+    {
+      "name": "my-whispr",
+      "path": "./app"
+    }
+  ],
+  "settings": {
+    "dart.flutterSdkPath": "./app/.fvm/versions/3.41.6",
+    "dart.openDevTools": "flutter",
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "dart.analysisExcludedFolders": [
+      "./app/.fvm"
+    ],
+    "dart.warnWhenEditingFilesOutsideWorkspace": false,
+    "dart.warnWhenEditingFilesInPubCache": false,
+    "files.watcherExclude": {
+      "**/.fvm/**": true,
+      "**/build/**": true,
+      "**/.dart_tool/**": true
+    },
+    "files.exclude": {
+      "**/.dart_tool": true,
+      "**/build": true
+    },
+    "search.exclude": {
+      "**/.fvm": true,
+      "**/build": true,
+      "**/.dart_tool": true,
+      "**/ios/Pods": true,
+      "**/ios/.symlinks": true,
+      "**/android/.gradle": true
+    },
+    "files.associations": {
+      "*.dart": "dart"
+    },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
+    "dart.lineLength": 120,
+    "editor.rulers": [120],
+    "flutter.automaticallySelectDebugDevice": true,
+    "flutter.debuggingOptions": {
+      "debugLogsEnabled": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dart-code.dart-code",
+      "dart-code.flutter",
+      "ms-vscode.vscode-json",
+      "bradlc.vscode-tailwindcss",
+      "usernamehw.errorlens",
+      "gruntfuggly.todo-tree",
+      "christian-kohler.path-intellisense",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Flutter: Clean",
+        "type": "shell",
+        "command": "fvm",
+        "args": ["flutter", "clean"],
+        "options": {
+          "cwd": "${workspaceFolder}/app"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Flutter: Get Dependencies",
+        "type": "shell",
+        "command": "fvm",
+        "args": ["flutter", "pub", "get"],
+        "options": {
+          "cwd": "${workspaceFolder}/app"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Flutter: Run (Debug)",
+        "type": "shell",
+        "command": "fvm",
+        "args": ["flutter", "run", "--debug"],
+        "options": {
+          "cwd": "${workspaceFolder}/app"
+        },
+        "group": "build",
+        "isBackground": true,
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Flutter: Run (Release)",
+        "type": "shell",
+        "command": "fvm",
+        "args": ["flutter", "run", "--release"],
+        "options": {
+          "cwd": "${workspaceFolder}/app"
+        },
+        "group": "build",
+        "isBackground": true,
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "my-whispr (Debug)",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder}/app",
+        "program": "lib/main.dart",
+        "flutterMode": "debug"
+      },
+      {
+        "name": "my-whispr (Release)",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder}/app",
+        "program": "lib/main.dart",
+        "flutterMode": "release"
+      },
+      {
+        "name": "my-whispr (Profile)",
+        "request": "launch",
+        "type": "dart",
+        "cwd": "${workspaceFolder}/app",
+        "program": "lib/main.dart",
+        "flutterMode": "profile"
+      }
+    ]
+  }
+}
